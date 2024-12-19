@@ -11,7 +11,7 @@ function sortList(list) {
     const salaryA = convertToNumber(a.dataset.salary);
     const salaryB = convertToNumber(b.dataset.salary);
 
-    return salaryA - salaryB;
+    return salaryB - salaryA;
   });
 
   list.innerHTML = '';
@@ -28,5 +28,5 @@ function getEmployees(list) {
     salary: convertToNumber(i.dataset.salary),
   }));
 }
-sortList();
-getEmployees();
+sortList(document.querySelectorAll('li'));
+getEmployees(document.querySelectorAll('li'));
