@@ -1,5 +1,7 @@
 'use strict';
 
+const employeeList = document.querySelector('body ul');
+
 function convertToNumber(stringSalary) {
   return parseFloat(stringSalary.replace(/[^\d.-]/g, ''));
 }
@@ -26,7 +28,8 @@ function getEmployees(list) {
     name: i.dataset.name,
     position: i.dataset.position,
     salary: convertToNumber(i.dataset.salary),
+    age: convertToNumber(i.dataset.age),
   }));
 }
-sortList(document.querySelectorAll('li'));
-getEmployees(document.querySelectorAll('li'));
+sortList(employeeList);
+getEmployees(employeeList);
